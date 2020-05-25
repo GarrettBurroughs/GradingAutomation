@@ -3,7 +3,7 @@ import regex
 import pyfiglet
 import numpy as np
 import pyqrcode
-import zbar
+import pyzbar.pyzbar as zbar
 import pdf2image
 import tkinter as tk
 import cv2
@@ -185,10 +185,9 @@ if __name__ == '__main__':
     else:
         filename = askopenfilename()
         print(filename)
-        # image = Image.open(filename)
-        image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
-        scanner = zbar.Scanner()
-        results = scanner.scan(image)
+        image = Image.open(filename)
+        results = zbar.decode(image)
+        print(results)
         for result in results:
             print(result.type, result.data, result.quality, result.position)
 

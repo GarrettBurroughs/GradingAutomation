@@ -1,0 +1,10 @@
+pylatex
+regex
+opencv-python
+Pillow
+pyfiglet
+pyqrcode
+pyzbar
+pdf2image
+PyInquirer
+pypng
